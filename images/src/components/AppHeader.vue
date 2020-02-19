@@ -1,6 +1,6 @@
 <template>
     <div>
-        Image goes here
+        <sui-button primary>click me</sui-button>
     </div>
 </template>
 
