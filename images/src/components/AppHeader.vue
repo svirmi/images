@@ -1,47 +1,12 @@
 <template>
     <div>
-        <sui-menu pointing secondary>
-            <a
-                    is="sui-menu-item"
-                    v-for="item in items"
-                    :active="isActive(item)"
-                    :key="item"
-                    :content="item"
-                    @click="select(item)"
-            />
-            <sui-menu-menu position="right">
-                <a
-                        is="sui-menu-item"
-                        :active="isActive('Logout')"
-                        content="Logout"
-                        @click="select('Logout')"
-                />
-            </sui-menu-menu>
-        </sui-menu>
-
-        <sui-segment>
-            <docs-wireframe name="media-paragraph" />
-        </sui-segment>
+        <h1>Hello!</h1>
     </div>
 </template>
 
 <script>
     export default {
-        name: "AppHeader",
-        data() {
-            return {
-                active: 'Image Storage',
-                items: ['Image Storage'],
-            };
-        },
-        methods: {
-            isActive(name) {
-                return this.active === name;
-            },
-            select(name) {
-                this.active = name;
-            },
-        },
+        name: "AppHeader"
     }
 </script>
 
