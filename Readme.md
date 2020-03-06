@@ -1,4 +1,4 @@
-#### vue.js youtube search app 
+#### image upload app 
 
 ##### Clone this repo
 
