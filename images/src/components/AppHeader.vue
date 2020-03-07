@@ -85,7 +85,7 @@
                     style="width: 300px"
                     class="ml-0 pl-4"
             >
-                <span class="hidden-sm-and-down">Google Contacts</span>
+                <span class="hidden-sm-and-down">Imgur App</span>
             </v-toolbar-title>
             <v-text-field
                     flat
@@ -125,34 +125,7 @@
                         align="center"
                         justify="center"
                 >
-                    <v-tooltip right>
-                        <template v-slot:activator="{ on }">
-                            <v-btn
-                                    :href="source"
-                                    icon
-                                    large
-                                    target="_blank"
-                                    v-on="on"
-                            >
-                                <v-icon large>mdi-code-tags</v-icon>
-                            </v-btn>
-                        </template>
-                        <span>Source</span>
-                    </v-tooltip>
-                    <v-tooltip right>
-                        <template v-slot:activator="{ on }">
-                            <v-btn
-                                    icon
-                                    large
-                                    href="https://codepen.io/johnjleider/pen/MNYLdL"
-                                    target="_blank"
-                                    v-on="on"
-                            >
-                                <v-icon large>mdi-codepen</v-icon>
-                            </v-btn>
-                        </template>
-                        <span>Codepen</span>
-                    </v-tooltip>
+                Content
                 </v-row>
             </v-container>
         </v-content>
@@ -253,7 +226,13 @@
 </template>
 
 <script>
+    import { mapActions } from 'vuex';
+
     export default {
+        name: "AppHeader",
+        methods: {
+            ...mapActions(['login']),
+        },
         props: {
             source: String,
         },
@@ -293,13 +272,6 @@
                 { icon: 'mdi-keyboard', text: 'Go to the old version' },
             ],
         }),
-    }
-</script>
-
-
-<script>
-    export default {
-        name: "AppHeader"
     }
 </script>
 
