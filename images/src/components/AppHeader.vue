@@ -87,14 +87,6 @@
             >
                 <span class="hidden-sm-and-down">Imgur App</span>
             </v-toolbar-title>
-            <v-text-field
-                    flat
-                    solo-inverted
-                    hide-details
-                    prepend-inner-icon="mdi-magnify"
-                    label="Search"
-                    class="hidden-sm-and-down"
-            />
             <v-spacer />
             <v-btn icon @click="login">
                 <v-icon>mdi-login</v-icon>
@@ -219,12 +211,15 @@
 </template>
 
 <script>
-    import { mapActions } from 'vuex';
+    import { mapActions, mapGetters } from 'vuex';
 
     export default {
         name: "AppHeader",
         methods: {
             ...mapActions(['login']),
+        },
+        computed: {
+            ...mapGetters(['isLoggedIn']),
         },
         props: {
             source: String,
