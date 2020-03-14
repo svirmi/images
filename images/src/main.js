@@ -4,6 +4,8 @@ import vuetify from '@/plugins/vuetify';
 import App from './App.vue';
 import store from './store';
 import AuthHandler from "./components/AuthHandler";
+import ImageList from "./components/ImageList";
+import UploadForm from "./components/UploadForm";
 
 Vue.config.productionTip = false;
 
@@ -15,6 +17,14 @@ export const router = new VueRouter({
     {
       path: '/oauth2/callback',
       component: AuthHandler
+    },
+    {
+      path: '/',
+      component: ImageList
+    },
+    {
+      path: '/upload',
+      component: UploadForm
     }
   ]
 });

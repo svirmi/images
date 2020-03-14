@@ -12,7 +12,7 @@ const getters = {
 
 const actions = {
     login: () => {
-      api.login();
+        api.login();
     },
     finalizeLogin({ commit }, hash){
         const queryParams = qs.parse(hash.replace('#',''));
@@ -23,8 +23,10 @@ const actions = {
         router.push('/');
     },
     logout: ({ commit }) => {
+
         commit('setToken', null);
         window.localStorage.removeItem('imgur_token');
+        router.push('/');
     }
 };
 

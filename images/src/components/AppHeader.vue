@@ -88,9 +88,11 @@
             <v-spacer />
 
             <div v-if="isLoggedIn">
-                <v-btn icon>
-                    <v-icon>mdi-image</v-icon>
-                </v-btn>
+                <router-link to="/">
+                    <v-btn icon>
+                        <v-icon>mdi-image</v-icon>
+                    </v-btn>
+                </router-link>
                 <v-btn icon @click="logout">
                     <v-icon>mdi-logout</v-icon>
                 </v-btn>
@@ -99,26 +101,22 @@
             <v-btn v-else icon @click="login">
                 <v-icon>mdi-login</v-icon>
             </v-btn>
-
         </v-app-bar>
+
         <v-content>
             <v-container class="fill-height" fluid>
                 <v-row align="center" justify="center">
-                    Content
                     <router-view></router-view>
                 </v-row>
             </v-container>
         </v-content>
-        <v-btn v-if="isLoggedIn"
-                bottom
-                color="pink"
-                dark
-                fab
-                fixed
-                right
-        >
-            <v-icon>mdi-plus</v-icon>
-        </v-btn>
+        <div v-if="isLoggedIn">
+            <router-link to="/upload">
+                <v-btn bottom color="pink" dark fab fixed right>
+                    <v-icon>mdi-plus</v-icon>
+                </v-btn>
+            </router-link>
+        </div>
     </v-app>
 </template>
 
