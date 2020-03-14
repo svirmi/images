@@ -96,7 +96,7 @@
                         <v-img src="https://cdn.vuetifyjs.com/images/logos/logo.svg" alt="Vuetify"/>
                     </v-avatar>
                 </v-btn>
-                <v-btn icon>
+                <v-btn icon @click="logout">
                     <v-icon>mdi-logout</v-icon>
                 </v-btn>
             </div>
@@ -202,7 +202,7 @@
     export default {
         name: "AppHeader",
         methods: {
-            ...mapActions(['login']),
+            ...mapActions(['login', 'logout']),
         },
         computed: {
             ...mapGetters(['isLoggedIn']),
