@@ -81,30 +81,30 @@
                 dark
         >
             <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-            <v-toolbar-title
-                    style="width: 300px"
-                    class="ml-0 pl-4"
-            >
+            <v-toolbar-title style="width: 300px" class="ml-0 pl-4">
                 <span class="hidden-sm-and-down">Imgur App</span>
             </v-toolbar-title>
+
             <v-spacer />
-            <v-btn icon @click="login">
+
+            <div v-if="isLoggedIn">
+                <v-btn icon>
+                    <v-icon>mdi-bell</v-icon>
+                </v-btn>
+                <v-btn icon large>
+                    <v-avatar size="32px" item>
+                        <v-img src="https://cdn.vuetifyjs.com/images/logos/logo.svg" alt="Vuetify"/>
+                    </v-avatar>
+                </v-btn>
+                <v-btn icon>
+                    <v-icon>mdi-logout</v-icon>
+                </v-btn>
+            </div>
+
+            <v-btn v-else icon @click="login">
                 <v-icon>mdi-login</v-icon>
             </v-btn>
-            <v-btn icon>
-                <v-icon>mdi-bell</v-icon>
-            </v-btn>
-            <v-btn icon large>
-                <v-avatar
-                        size="32px"
-                        item
-                >
-                    <v-img
-                            src="https://cdn.vuetifyjs.com/images/logos/logo.svg"
-                            alt="Vuetify"
-                    />
-                </v-avatar>
-            </v-btn>
+
         </v-app-bar>
         <v-content>
             <v-container class="fill-height" fluid>
