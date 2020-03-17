@@ -1,7 +1,19 @@
-const state = {};
+const state = {
+    images: []
+};
 
-const getters = {};
+const getters = {
+    allImages: state => state.images
+};
 
-const actions = {};
+const actions = {
+    fetchImages(){
 
-const mutations = {};
+    }
+};
+
+const mutations = {
+    setImages: (state, images) => {
+        state.images = images;
+    }
+};
