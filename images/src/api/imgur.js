@@ -26,6 +26,6 @@ export default {
             Authorization: `Bearer ${token}`
         };
 
-        return axios.get(url,headers);
+        return axios.get(url,{headers});
     }
 }
