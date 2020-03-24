@@ -26,6 +26,22 @@ export default {
             Authorization: `Bearer ${token}`
         };
 
-        return axios.get(url,{headers});
+        return axios.get(url,{ headers });
+    },
+
+    uploadImages(images, token) {
+        const promises = Array.from(images).map(image => {
+            const url = `${ROOT_URL}/3/image`;
+            const headers = {
+                Authorization: `Bearer ${token}`
+            };
+            const formData = new FormData();
+
+            formData.append('image', image);
+
+            return axios.post(url, formData,{ headers });
+        });
+
+        return Promise.all(promises);
     }
 }
